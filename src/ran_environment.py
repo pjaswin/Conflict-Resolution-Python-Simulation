@@ -1,6 +1,4 @@
 """
-This code is based on https://chatgpt.com/c/696419ed-8b5c-832d-b875-3b5a87ebf49a. Replace with actual MCS lookup table.
-
 RAN sandbox simulator (single-cell) with CSV time-series logging.
 
 Features:

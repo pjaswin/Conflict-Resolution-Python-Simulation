@@ -687,7 +687,7 @@ def main():
     print("  q                       quit\n")
 
     # -------- CSV setup --------
-    csv_path = "output/ran_timeseries.csv"
+    csv_path = r"C:\Users\aswin\Downloads\VSCODE\Conflict-Resolution-Python-Simulation\output\ran_timeseries.csv"
     f_csv = open(csv_path, "w", newline="")
     writer: csv.DictWriter | None = None
 

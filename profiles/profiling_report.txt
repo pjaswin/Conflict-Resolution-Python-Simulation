@@ -1,0 +1,102 @@
+================================================================================
+PACIFISTA PROFILING REPORT
+================================================================================
+
+INDIVIDUAL xAPP PROFILES
+--------------------------------------------------------------------------------
+
+
+X1
+  Duration: 300.0s
+  Samples: 1167
+  Parameters:
+    eMBB  : mean= 19.92, std= 1.60, min= 16, max= 24
+    URLLC : mean= 14.97, std= 1.64, min= 10, max= 20
+    mMTC  : mean= 15.10, std= 2.34, min=  8, max= 22
+
+X2
+  Duration: 300.0s
+  Samples: 1167
+  Parameters:
+    eMBB  : mean= 14.94, std= 1.60, min= 10, max= 20
+    URLLC : mean= 19.90, std= 1.59, min= 14, max= 24
+    mMTC  : mean= 15.16, std= 2.31, min=  8, max= 22
+
+X3
+  Duration: 300.0s
+  Samples: 1167
+  Parameters:
+    eMBB  : mean= 17.92, std= 1.60, min= 14, max= 22
+    URLLC : mean= 11.90, std= 1.59, min=  6, max= 16
+    mMTC  : mean= 20.18, std= 2.29, min= 14, max= 26
+
+X4
+  Duration: 300.0s
+  Samples: 1167
+  Parameters:
+    eMBB  : mean= 21.92, std= 1.60, min= 18, max= 26
+    URLLC : mean= 17.90, std= 1.59, min= 12, max= 22
+    mMTC  : mean= 10.18, std= 2.29, min=  4, max= 16
+
+X5
+  Duration: 300.0s
+  Samples: 1167
+  Parameters:
+    eMBB  : mean= 15.92, std= 1.60, min= 12, max= 20
+    URLLC : mean= 15.90, std= 1.59, min= 10, max= 20
+    mMTC  : mean= 18.18, std= 2.29, min= 12, max= 24
+
+================================================================================
+PAIRWISE CONFLICT DETECTION
+--------------------------------------------------------------------------------
+
+
+x1 vs x2: HIGH
+  eMBB: K-S=0.8946, p-value=0.0000
+  URLLC: K-S=0.8852, p-value=0.0000
+  mMTC: K-S=0.0146, p-value=0.9997
+
+x1 vs x3: HIGH
+  eMBB: K-S=0.5133, p-value=0.0000
+  URLLC: K-S=0.6744, p-value=0.0000
+  mMTC: K-S=0.7215, p-value=0.0000
+
+x1 vs x4: HIGH
+  eMBB: K-S=0.5133, p-value=0.0000
+  URLLC: K-S=0.6521, p-value=0.0000
+  mMTC: K-S=0.7189, p-value=0.0000
+
+x1 vs x5: HIGH
+  eMBB: K-S=0.7464, p-value=0.0000
+  URLLC: K-S=0.2305, p-value=0.0000
+  mMTC: K-S=0.4944, p-value=0.0000
+
+x2 vs x3: HIGH
+  eMBB: K-S=0.6615, p-value=0.0000
+  URLLC: K-S=0.9803, p-value=0.0000
+  mMTC: K-S=0.7189, p-value=0.0000
+
+x2 vs x4: HIGH
+  eMBB: K-S=0.9674, p-value=0.0000
+  URLLC: K-S=0.5150, p-value=0.0000
+  mMTC: K-S=0.7335, p-value=0.0000
+
+x2 vs x5: HIGH
+  eMBB: K-S=0.2476, p-value=0.0000
+  URLLC: K-S=0.7481, p-value=0.0000
+  mMTC: K-S=0.4919, p-value=0.0000
+
+x3 vs x4: HIGH
+  eMBB: K-S=0.7464, p-value=0.0000
+  URLLC: K-S=0.9520, p-value=0.0000
+  mMTC: K-S=0.9709, p-value=0.0000
+
+x3 vs x5: HIGH
+  eMBB: K-S=0.5133, p-value=0.0000
+  URLLC: K-S=0.7481, p-value=0.0000
+  mMTC: K-S=0.3530, p-value=0.0000
+
+x4 vs x5: HIGH
+  eMBB: K-S=0.9486, p-value=0.0000
+  URLLC: K-S=0.5150, p-value=0.0000
+  mMTC: K-S=0.9100, p-value=0.0000

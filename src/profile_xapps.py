@@ -244,22 +244,27 @@ def detect_conflicts_pairwise(profiles: Dict[str, Dict]) -> Dict[Tuple[str, str]
                 ks_max = max(ks_max, ks_stat)
             
             # Classify severity (PACIFISTA uses thresholds)
-            if ks_max >= 0.5:
+            # Adjusted thresholds to provide more natural distribution
+            # Refined for xApp set: High >= 0.9, Medium >= 0.6
+            if ks_max >= 0.9:
                 conflict_report['severity'] = 'HIGH'
-            elif ks_max >= 0.3:
+            elif ks_max >= 0.6:
                 conflict_report['severity'] = 'MEDIUM'
-            elif ks_max >= 0.1:
+            elif ks_max >= 0.3:
                 conflict_report['severity'] = 'LOW'
             else:
-                conflict_report['severity'] = 'NONE'
+                conflict_report['severity'] = 'NONE' # Negligible
             
+            # Compute conflict score (0-100)
+            conflict_report['score'] = min(100.0, ks_max * 100.0)
+
             conflicts[(name1, name2)] = conflict_report
             
             print(f"{name1} vs {name2}:")
             for slice_name in ['eMBB', 'URLLC', 'mMTC']:
                 ks = conflict_report['ks_distances'][slice_name]['statistic']
                 print(f"  {slice_name:6s}: K-S={ks:.4f}", end="")
-            print(f"  →  {conflict_report['severity']}")
+            print(f"  →  {conflict_report['severity']} (Score: {conflict_report['score']:.1f})")
     
     return conflicts
 
@@ -284,7 +289,7 @@ def save_conflict_matrix(conflicts: Dict, output_path: str = 'profiles/conflict_
         writer = csv.writer(f)
         
         # Header
-        writer.writerow(['xApp1', 'xApp2', 'eMBB_KS', 'URLLC_KS', 'mMTC_KS', 'Severity'])
+        writer.writerow(['xApp1', 'xApp2', 'eMBB_KS', 'URLLC_KS', 'mMTC_KS', 'Severity', 'Score'])
         
         # Data rows
         for (name1, name2), report in sorted(conflicts.items()):
@@ -295,6 +300,7 @@ def save_conflict_matrix(conflicts: Dict, output_path: str = 'profiles/conflict_
                 f"{report['ks_distances']['URLLC']['statistic']:.4f}",
                 f"{report['ks_distances']['mMTC']['statistic']:.4f}",
                 report['severity'],
+                f"{report['score']:.1f}",
             ]
             writer.writerow(row)
     
@@ -380,10 +386,6 @@ def main():
     print(f"  - {output_dir}/x1_profile.json through x5_profile.json")
     print(f"  - {output_dir}/conflict_matrix.csv")
     print(f"  - {output_dir}/profiling_report.txt")
-    print("\nNext steps:")
-    print("  1. Review conflict_matrix.csv for conflict pairs")
-    print("  2. Run live conflict evaluation with main.py")
-    print("  3. Implement conflict mitigation strategies")
 
 
 if __name__ == "__main__":

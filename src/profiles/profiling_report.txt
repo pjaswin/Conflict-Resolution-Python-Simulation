@@ -51,22 +51,22 @@ PAIRWISE CONFLICT DETECTION
 --------------------------------------------------------------------------------
 
 
-x1 vs x2: MEDIUM
+x1 vs x2: HIGH
   eMBB: K-S=0.8946, p-value=0.0000
   URLLC: K-S=0.8852, p-value=0.0000
   mMTC: K-S=0.0146, p-value=0.9997
 
-x1 vs x3: MEDIUM
+x1 vs x3: HIGH
   eMBB: K-S=0.5133, p-value=0.0000
   URLLC: K-S=0.6744, p-value=0.0000
   mMTC: K-S=0.7215, p-value=0.0000
 
-x1 vs x4: MEDIUM
+x1 vs x4: HIGH
   eMBB: K-S=0.5133, p-value=0.0000
   URLLC: K-S=0.6521, p-value=0.0000
   mMTC: K-S=0.7189, p-value=0.0000
 
-x1 vs x5: MEDIUM
+x1 vs x5: HIGH
   eMBB: K-S=0.7464, p-value=0.0000
   URLLC: K-S=0.2305, p-value=0.0000
   mMTC: K-S=0.4944, p-value=0.0000
@@ -81,7 +81,7 @@ x2 vs x4: HIGH
   URLLC: K-S=0.5150, p-value=0.0000
   mMTC: K-S=0.7335, p-value=0.0000
 
-x2 vs x5: MEDIUM
+x2 vs x5: HIGH
   eMBB: K-S=0.2476, p-value=0.0000
   URLLC: K-S=0.7481, p-value=0.0000
   mMTC: K-S=0.4919, p-value=0.0000
@@ -91,7 +91,7 @@ x3 vs x4: HIGH
   URLLC: K-S=0.9520, p-value=0.0000
   mMTC: K-S=0.9709, p-value=0.0000
 
-x3 vs x5: MEDIUM
+x3 vs x5: HIGH
   eMBB: K-S=0.5133, p-value=0.0000
   URLLC: K-S=0.7481, p-value=0.0000
   mMTC: K-S=0.3530, p-value=0.0000
